@@ -9,9 +9,9 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import app from "./firebase.init";
 
 // import axios from "axios";
+import app1 from "./firebase.init";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
   const [cardDetails, setCardDetails] = useState(null);
 
   // Firebase authentication  Start
-  const auth = getAuth(app);
+  const auth = getAuth(app1);
   const user1 = auth.currentUser;
 
   // Firebase authentication  Start
