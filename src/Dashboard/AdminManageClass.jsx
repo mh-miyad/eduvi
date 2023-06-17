@@ -7,14 +7,14 @@ const AdminManageClass = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://eduvi-server.vercel.app/courses`)
+    fetch(`http://localhost:5000/courses`)
       .then((response) => response.json())
       .then((resData) => {
         setData(resData);
       });
   }, [data]);
   const changeStatus = (value, id) => {
-    fetch(`https://eduvi-server.vercel.app/courses?id=${id}&value=${value}`, {
+    fetch(`http://localhost:5000/courses?id=${id}&value=${value}`, {
       method: "PATCH",
     })
       .then((response) => response.json())

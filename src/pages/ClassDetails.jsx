@@ -43,7 +43,7 @@ const ClassDetails = () => {
       instructor,
       category,
     };
-    fetch(`https://eduvi-server.vercel.app/select`, {
+    fetch(`http://localhost:5000/select`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

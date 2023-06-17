@@ -10,7 +10,7 @@
 //     const fetchUserRole = async () => {
 //       try {
 //         const response = await fetch(
-//           `https://eduvi-server.vercel.app/users/admin/${user?.email}`,
+//           `http://localhost:5000/users/admin/${user?.email}`,
 //         );
 //         const data = await response.json();
 
@@ -53,7 +53,7 @@ const PrivateRoute = ({ children }) => {
   const fetchUserRole = async () => {
     try {
       const response = await fetch(
-        `https://eduvi-server.vercel.app/users/admin/${user?.email}`,
+        `http://localhost:5000/users/admin/${user?.email}`,
       );
       const data = await response.json();
 

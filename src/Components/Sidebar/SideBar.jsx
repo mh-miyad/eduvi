@@ -25,7 +25,7 @@ const SideBar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   useEffect(() => {
-    fetch(`https://eduvi-server.vercel.app/users/admin/${user?.email}`)
+    fetch(`http://localhost:5000/users/admin/${user?.email}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.role === "admin") {

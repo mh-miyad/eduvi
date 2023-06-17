@@ -6,12 +6,9 @@ const TableRow = ({ item }) => {
   const { name, email, image, role, _id } = item;
 
   const makeRole = (value, id) => {
-    fetch(
-      `https://eduvi-server.vercel.app/users/admin?id=${id}&value=${value}`,
-      {
-        method: "PATCH",
-      },
-    )
+    fetch(`http://localhost:5000/users/admin?id=${id}&value=${value}`, {
+      method: "PATCH",
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -20,7 +17,7 @@ const TableRow = ({ item }) => {
       });
   };
   const deleteUser = (id) => {
-    fetch(` https://eduvi-server.vercel.app/users/admin/${id}`, {
+    fetch(` http://localhost:5000/users/admin/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

@@ -20,7 +20,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     if (price > 0) {
       axios
-        .post("https://eduvi-server.vercel.app/create-payment-intent", {
+        .post("http://localhost:5000/create-payment-intent", {
           price,
         })
         .then((res) => {
@@ -89,14 +89,12 @@ const CheckoutForm = () => {
         payment: "succeeded",
         itemNames: cardDetails.map((item) => item.coursename),
       };
-      axios
-        .post("https://eduvi-server.vercel.app/payments", payment)
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.result?.insertedId) {
-            console.log(res.data.result.insertedId);
-          }
-        });
+      axios.post("http://localhost:5000/payments", payment).then((res) => {
+        console.log(res.data);
+        if (res.data.result?.insertedId) {
+          console.log(res.data.result.insertedId);
+        }
+      });
     }
   };
 

@@ -5,7 +5,7 @@ import TableComp from "../Components/Table/TableComp";
 const ManageUser = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://eduvi-server.vercel.app/users`)
+    fetch(`http://localhost:5000/users`)
       .then((response) => response.json())
       .then((result) => setData(result));
   }, [data]);

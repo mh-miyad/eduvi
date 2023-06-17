@@ -9,7 +9,7 @@ const useClass = () => {
     queryKey: ["classes"],
     queryFn: async () => {
       try {
-        const res = await axios.get(`https://eduvi-server.vercel.app/courses`);
+        const res = await axios.get(`http://localhost:5000/courses`);
         return res.data;
       } catch (error) {
         console.log(error);

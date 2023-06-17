@@ -9,9 +9,7 @@ const EnrollClass = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(
-      `https://eduvi-server.vercel.app/enrolled-courses?email=${user?.email}`,
-    )
+    fetch(`http://localhost:5000/enrolled-courses?email=${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
         setEnrollment(result);

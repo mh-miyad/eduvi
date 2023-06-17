@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         path: "/class/:id",
         element: <ClassDetails />,
         loader: ({ params }) =>
-          fetch(`https://eduvi-server.vercel.app/courses/${params.id}`),
+          fetch(`http://localhost:5000/courses/${params.id}`),
       },
       {
         path: "/instructors",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         path: "/instructor/:id",
         element: <InstructorDetails />,
         loader: ({ params }) =>
-          fetch(`https://eduvi-server.vercel.app/instructor/${params.id}`),
+          fetch(`http://localhost:5000/instructor/${params.id}`),
       },
       {
         path: "*",

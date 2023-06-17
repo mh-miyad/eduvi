@@ -45,7 +45,7 @@ const RegisterForm = () => {
         };
         // user data
         setLoader(true);
-        fetch(`https://eduvi-server.vercel.app/users`, {
+        fetch(`http://localhost:5000/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const RegisterForm = () => {
             role: "student",
           };
 
-          fetch("https://eduvi-server.vercel.app/users", {
+          fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

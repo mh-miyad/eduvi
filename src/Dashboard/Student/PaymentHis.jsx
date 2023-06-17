@@ -8,18 +8,15 @@ const PaymentHis = () => {
   const { user, setmenuiD } = useContext(AuthContext);
   const [data, setdata] = useState([]);
   useEffect(() => {
-    fetch(`https://eduvi-server.vercel.app/payments?email=${user.email}`)
+    fetch(`http://localhost:5000/payments?email=${user.email}`)
       .then((res) => res.json())
       .then((resdata) => {
         setdata(resdata);
 
         if (resdata.transactionId) {
-          fetch(
-            `https://eduvi-server.vercel.app/payments?email=${user.email}`,
-            {
-              method: "PATCH",
-            },
-          )
+          fetch(`http://localhost:5000/payments?email=${user.email}`, {
+            method: "PATCH",
+          })
             .then((res) => res.json())
             .then((resdata) => {
               console.log(resdata);

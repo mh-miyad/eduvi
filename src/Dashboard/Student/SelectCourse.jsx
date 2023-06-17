@@ -22,7 +22,7 @@ const SelectCourse = () => {
   }, [data]);
 
   useEffect(() => {
-    fetch(`https://eduvi-server.vercel.app/select?email=${user?.email}`)
+    fetch(`http://localhost:5000/select?email=${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
         setCardDetails(result);

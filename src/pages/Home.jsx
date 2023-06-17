@@ -16,7 +16,7 @@ const Home = () => {
   const [instructor] = useInstructor();
 
   useEffect(() => {
-    fetch(`https://eduvi-server.vercel.app/courses`)
+    fetch(`http://localhost:5000/courses`)
       .then((response) => response.json())
       .then((res) => setData(res));
   }, []);
